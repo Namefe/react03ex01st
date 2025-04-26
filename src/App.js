@@ -1,6 +1,9 @@
+import { Link, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Home from "./_views/Home";
 
 function App() {
+  
   return (
     <>
       {/* HEADER : 링크 올바르게 수정해주세요. */}
@@ -13,24 +16,16 @@ function App() {
           <nav>
             <ul className="flex space-x-4">
               <li>
-                <a href="#" className="hover:text-red-200">
-                  Home
-                </a>
+                <Link className="hover:text-red-200" to='/Home.js'>Home</Link>
               </li>
               <li>
-                <a href="#" className="hover:text-red-200">
-                  About
-                </a>
+              <Link className="hover:text-red-200" to='/About.js'>About</Link>
               </li>
               <li>
-                <a href="#" className="hover:text-red-200">
-                  Services
-                </a>
+              <Link className="hover:text-red-200" to='/Services.js'>Services</Link>
               </li>
               <li>
-                <a href="#" className="hover:text-red-200">
-                  Contact
-                </a>
+              <Link className="hover:text-red-200" to='/Contact.js'>Contact</Link>
               </li>
             </ul>
           </nav>
@@ -38,6 +33,10 @@ function App() {
       </header>
 
       {/* Route : 작성해주세요. */}
+      <Routes>
+        <Route path="/src/_views/Home.js" element={<Home/>}></Route>
+        <Route path="/src/_views/About.js" element={<About/>}></Route>
+      </Routes>
 
       {/* SECTION 1 : 건들지마세요. */}
       <section className="w-full h-[100vh] bg-red-500 flex items-center justify-center">
